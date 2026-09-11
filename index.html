@@ -1,123 +1,357 @@
 <!doctype html>
 <html lang="ko">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>대구 범어동 겹겹 삼겹살 리뷰 INDEX</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>대구 범어동 겹겹삼겹살 리뷰 INDEX</title>
 <style>
-:root{--bg:#f6f3ee;--card:#fff;--ink:#222;--muted:#777;--line:#e7dfd4;--accent:#7b3f24;--accent2:#c89562}
-*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Pretendard","Noto Sans KR",sans-serif}
-.wrap{max-width:900px;margin:auto;padding:18px 14px 110px}.hero{background:linear-gradient(135deg,#2b211d,#7b3f24);color:white;border-radius:22px;padding:25px 20px;box-shadow:0 8px 30px #0002}
-.kicker{font-size:12px;letter-spacing:.14em;opacity:.75}.hero h1{font-size:29px;margin:8px 0}.hero p{margin:0;opacity:.86;line-height:1.6}.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}.tag{background:#ffffff18;border:1px solid #ffffff25;padding:6px 9px;border-radius:99px;font-size:12px}
-.actions{position:sticky;top:0;z-index:20;display:flex;gap:7px;overflow:auto;padding:10px 0;background:linear-gradient(var(--bg) 75%,transparent)}
-button,.btn{border:0;border-radius:12px;padding:11px 13px;font-weight:700;background:#eee6dc;color:#4c3326;white-space:nowrap}.primary{background:var(--accent);color:#fff}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:17px;margin:13px 0;box-shadow:0 3px 15px #4a2b1510}
-h2{font-size:19px;margin:0 0 14px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.field label,.memo label{display:block;font-size:12px;color:var(--muted);margin:0 0 6px}
-input,textarea{width:100%;border:1px solid var(--line);border-radius:11px;padding:11px 12px;background:#fffdfb;font-size:15px}textarea{min-height:88px;resize:vertical;line-height:1.55}
-.hint{font-size:12px;color:#8b7b6f;line-height:1.5;margin:6px 0 0}.photo-list{display:grid;gap:11px}.photo-item{border:1px solid var(--line);border-radius:15px;padding:11px;background:#fffdfb}
-.photo-head{display:flex;align-items:center;gap:8px;margin-bottom:9px}.drag{cursor:grab;font-size:20px;color:#aaa}.photo-title{flex:1;font-weight:800}.danger{background:#f7e8e5;color:#9b3f33;padding:7px 9px}
-.photo-controls{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:9px}.photo-controls label{display:inline-block;background:#eee6dc;border-radius:10px;padding:9px 11px;font-size:13px;font-weight:700;cursor:pointer}
-.photo-controls input[type=file]{display:none}.previews{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:8px 0}.previews img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:9px}
-.memo{margin:12px 0}.memo-row{display:flex;gap:8px}.memo-row textarea{flex:1}.mic{align-self:stretch;background:#f0e7dc;min-width:48px}
-.score{display:flex;gap:7px}.score button{width:45px;height:45px;padding:0}.score button.on{background:var(--accent);color:#fff}
-.footerbar{position:fixed;bottom:0;left:0;right:0;background:#ffffffed;backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:9px 12px calc(9px + env(safe-area-inset-bottom));display:flex;gap:8px;justify-content:center;z-index:30}
-.footerbar button{flex:1;max-width:270px}.status{font-size:12px;color:#777;text-align:right;margin-top:8px}
-#draft{white-space:pre-wrap;line-height:1.75;background:#fbf8f4;border-radius:12px;padding:14px;border:1px dashed #d8c8b8;min-height:100px}
-@media(max-width:620px){.grid{grid-template-columns:1fr}.hero h1{font-size:25px}.previews{grid-template-columns:repeat(2,1fr)}}
-</style></head>
-<body><div class="wrap">
-<section class="hero"><div class="kicker">NAVER BLOG REVIEW INDEX · BEOMEO-DONG</div><h1>대구 수성구 범어동<br>겹겹 삼겹살 방문 INDEX</h1>
-<p>팔복 중식당 리뷰 INDEX 흐름을 기준으로, 고기집 방문 현장에서 사진·음성메모·맛평가를 바로 기록하도록 구성했습니다.</p>
-<div class="tags"><span class="tag">#범어동맛집</span><span class="tag">#범어동삼겹살</span><span class="tag">#겹겹</span><span class="tag">#수성구고기집</span><span class="tag">#가족외식</span></div></section>
+:root{--bg:#f6f7f8;--card:#fff;--text:#202124;--muted:#6b7280;--line:#e5e7eb;--green:#03c75a;--blue:#2563eb;--orange:#d65a1f}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;line-height:1.65}
+button,input,textarea{font:inherit}.wrap{max-width:980px;margin:auto;padding:16px 14px 90px}
+.hero{background:linear-gradient(135deg,#fffdf8,#fff1e7);border:1px solid #eedbc4;border-radius:24px;padding:24px 20px}
+.hero small{font-weight:800;color:#a44d00}.hero h1{margin:8px 0;font-size:29px;line-height:1.25}.hero p{margin:0;color:var(--muted)}
+.chips{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.chip{background:#fff;border:1px solid #eadfce;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:700}
+.toolbar{position:sticky;top:8px;z-index:20;background:#fffffff2;backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:17px;padding:10px;margin:12px 0;display:flex;gap:8px;flex-wrap:wrap}
+.btn{border:0;border-radius:10px;padding:10px 12px;font-weight:800;background:#eef1f4}.primary{background:var(--green);color:#fff}.blue{background:var(--blue);color:#fff}.orange{background:var(--orange);color:#fff}
+.grid{display:grid;grid-template-columns:1.05fr .95fr;gap:14px}@media(max-width:760px){.grid{grid-template-columns:1fr}.hero h1{font-size:25px}}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:17px;margin:12px 0}.card h2{font-size:20px;margin:0 0 12px}
+.factgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}@media(max-width:520px){.factgrid{grid-template-columns:1fr}}
+.fact{border:1px solid var(--line);border-radius:12px;padding:10px}.fact b{display:block;font-size:12px;color:var(--muted)}
+label{display:block;font-size:12px;font-weight:800;color:#4b5563;margin:10px 0 5px}
+input,textarea{width:100%;border:1px solid #d7dce1;border-radius:10px;padding:10px;background:#fff}textarea{min-height:85px;resize:vertical}
+.voice-ref{margin:6px 0 7px;padding:9px 11px;background:#f8fafc;border:1px solid #e5e7eb;border-radius:10px;color:#64748b;font-size:12px}.voice-ref b{color:#475569}
+.note{background:#fff9f1;border-left:4px solid #d79a3a;padding:10px 12px;border-radius:8px;font-size:13px;color:#5f503b}
+.shot{border:1px solid var(--line);border-radius:15px;overflow:hidden;margin:11px 0;background:#fff}.shothead{display:flex;gap:10px;padding:12px}.num{width:30px;height:30px;border-radius:9px;background:#fff3e8;color:#a65200;display:flex;align-items:center;justify-content:center;font-weight:900}.st{flex:1}.st b{display:block}.st span{font-size:12px;color:var(--muted)}
+.shotbody{padding:0 12px 12px}.photo{min-height:145px;border:1.5px dashed #cbd5e1;border-radius:11px;background:#fafafa;display:flex;align-items:center;justify-content:center;overflow:hidden;color:#94a3b8;font-size:13px;text-align:center}.photo img{width:100%;height:auto}
+.actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:8px}.actions label,.actions button{margin:0;border:0;border-radius:9px;padding:9px 10px;font-weight:800;font-size:12px;background:#eef2f4;cursor:pointer}.actions .camera{background:#e8fff1;color:#067a38}.hidden{display:none}
+.preview{white-space:pre-wrap;border:1px solid var(--line);border-radius:14px;padding:17px;min-height:260px;line-height:1.9}
+.score{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}.score button{border:1px solid var(--line);background:#fff;border-radius:9px;padding:8px}.score button.on{background:#fff4e6;border-color:#ffc57d;color:#d66800}
+.tags{display:flex;flex-wrap:wrap;gap:6px}.tag{border:1px solid var(--line);border-radius:999px;padding:6px 9px;font-size:12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<section class="hero">
+<small>NAVER BLOG REVIEW INDEX · BEOMEO-DONG</small>
+<h1>대구 수성구 범어동<br>겹겹삼겹살 방문 INDEX</h1>
+<p>범어동 겹겹삼겹살에서 외관부터 고기 굽기·한입·사이드까지 사진과 음성메모로 바로 기록하는 리뷰용 템플릿</p>
+<div class="chips"><span class="chip">범어동맛집</span><span class="chip">수성구삼겹살</span><span class="chip">대구고기집</span><span class="chip">삼겹살</span><span class="chip">가족외식</span></div>
+</section>
 
-<div class="actions">
-<button class="primary" onclick="makeDraft()">✍️ 블로그 초안 생성</button>
-<button onclick="copyDraft()">📋 초안 복사</button>
-<button onclick="exportHTML()">📦 HTML 내보내기</button>
-<button onclick="downloadPhotos()">📥 사진 일괄다운로드</button>
+<div class="toolbar">
+<button class="btn primary" onclick="draft()">✍️ 블로그 초안 생성</button>
+<button class="btn blue" onclick="copyDraft()">📋 초안 복사</button>
+<button class="btn orange" onclick="exportHTML()">📦 HTML 내보내기</button>
+<button class="btn" onclick="downloadPhotos()">📥 사진 일괄다운로드</button>
+<span id="saveState" style="margin-left:auto;font-size:12px;color:#6b7280">자동저장 준비</span>
 </div>
 
-<section class="card"><h2>1. 겹겹 기본정보</h2>
 <div class="grid">
-<div class="field"><label>매장</label><input data-save id="store" value="겹겹 범어본점"></div>
-<div class="field"><label>주소</label><input data-save id="address" value="대구광역시 수성구 상록로 28 1층"></div>
-<div class="field"><label>방문일</label><input data-save id="date" type="date"></div>
-<div class="field"><label>인원</label><input data-save id="people" placeholder="예: 어른 2명 + 아이 1명"></div>
-<div class="field"><label>예약 / 웨이팅</label><input data-save id="wait" placeholder="예: 현장 방문 / 대기 10분"></div>
-<div class="field"><label>총 결제금액</label><input data-save id="price" placeholder="예: 78,000원"></div>
+<div>
+<section class="card">
+<h2>1. 겹겹삼겹살 기본정보</h2>
+<div class="factgrid">
+<div class="fact"><b>상호</b>겹겹삼겹살 범어점</div>
+<div class="fact"><b>주소</b><input id="storeAddress" placeholder="현장에서 주소 확인 후 입력"></div>
+<div class="fact"><b>전화</b><input id="storePhone" placeholder="전화번호 입력"></div>
+<div class="fact"><b>영업시간</b><input id="storeHours" placeholder="예: 16:00–24:00"></div>
+<div class="fact"><b>라스트오더</b><input id="lastOrder" placeholder="현장 확인"></div>
+<div class="fact"><b>주차</b><input id="storeParking" placeholder="전용/인근 주차 여부 입력"></div>
 </div>
-<div class="field" style="margin-top:10px"><label>주문 메뉴</label><input data-save id="menu" placeholder="예: 삼겹살 + 목살 + 된장찌개 + 볶음밥"></div>
-<p class="hint">공개 검색 기준 겹겹 범어본점은 상록로 28 1층의 고기 전문점으로 확인됩니다. 영업시간·메뉴·가격은 방문 당일 메뉴판을 직접 촬영해 최종 확인하세요.</p>
+<div class="note" style="margin-top:10px">주소·영업시간·주차·가격은 방문 시점에 따라 달라질 수 있어 현장에서 확인하도록 입력칸으로 두었습니다. 사진은 촬영 후 자동 압축되며, HTML 내보내기 시 한 번 더 축소합니다.</div>
+<label>방문일</label><input id="visitDate" type="date">
+<label>인원</label><input id="party" placeholder="예: 어른 2명 + 아이 1명">
+<label>예약/웨이팅</label><input id="reservation" placeholder="예: 예약 없이 방문 / 현장 웨이팅 10분">
+<label>주문 메뉴</label><input id="orderMenu" placeholder="예: 삼겹살 3인분 + 목살 + 된장찌개 + 볶음밥">
+<label>총 결제금액</label><input id="price" placeholder="예: 74,000원">
 </section>
 
-<section class="card"><h2>2. 대표 메뉴 체크</h2>
-<div class="grid">
-<div class="field"><label>첫 주문 고기</label><input data-save id="meat1" placeholder="삼겹살 / 목살 / 기타"></div>
-<div class="field"><label>추가 주문</label><input data-save id="meat2" placeholder="추가 고기 / 식사류"></div>
-<div class="field"><label>인상적이었던 곁들임</label><input data-save id="side" placeholder="예: 청어알, 페스토, 와사비 등"></div>
-<div class="field"><label>마무리 메뉴</label><input data-save id="finish" placeholder="된장찌개 / 볶음밥 / 냉면 등"></div>
-</div><p class="hint">고기 두께·굽기 방식·직원 구이 여부, 곁들임 소스와 조합, 식사 메뉴까지 사진으로 남겨두면 후기 작성이 훨씬 자연스럽습니다.</p>
+<section class="card">
+<h2>2. 주문 메뉴·고기 체크</h2>
+<div class="voice-ref"><b>현장 확인:</b> 삼겹살·목살 등 고기 종류와 1인분 중량/가격, 기본찬, 소스, 찌개·냉면·볶음밥 같은 사이드 메뉴를 메뉴판 사진으로 남겨두세요. 고기의 두께와 굽기 전후 비주얼도 꼭 비교 촬영하면 리뷰 작성이 쉬워집니다.</div>
 </section>
 
-<section class="card"><h2>3. 사진 촬영 + 사진별 음성메모</h2>
-<div id="photos" class="photo-list"></div>
-<button onclick="addPhotoItem()" style="margin-top:12px;width:100%">＋ 사진 항목 추가</button>
-<p class="hint">각 항목에서 카메라 촬영 또는 여러 장을 한 번에 선택할 수 있습니다. 항목은 ↕ 손잡이로 드래그해 순서를 바꿀 수 있고 삭제도 가능합니다.</p>
+<section class="card">
+<h2>3. 사진 촬영 + 사진별 음성메모</h2>
+<div id="shots"></div>
+<button class="btn" style="width:100%" onclick="addShot()">＋ 사진 항목 추가</button>
 </section>
-
-<section class="card"><h2>4. 핵심 후기 메모</h2>
-<div id="memos"></div></section>
-
-<section class="card"><h2>5. 음식 평가</h2>
-<div class="memo"><label>삼겹살·목살</label><div class="memo-row"><textarea data-save id="food1" placeholder="말하기 참고: 고기 두께 → 육즙 → 지방의 고소함 → 겉면 굽기 → 잡내 → 가장 맛있었던 부위"></textarea><button class="mic" onclick="voiceTo('food1')">🎙️</button></div></div>
-<div class="memo"><label>곁들임·소스 조합</label><div class="memo-row"><textarea data-save id="food2" placeholder="말하기 참고: 소금·와사비·페스토·청어알 등 어떤 조합이 고기와 가장 잘 맞았는지"></textarea><button class="mic" onclick="voiceTo('food2')">🎙️</button></div></div>
-<div class="memo"><label>식사 메뉴</label><div class="memo-row"><textarea data-save id="food3" placeholder="말하기 참고: 된장찌개·냉면·볶음밥 등의 간, 양, 고기 먹은 뒤 마무리 만족도"></textarea><button class="mic" onclick="voiceTo('food3')">🎙️</button></div></div>
-<div class="memo"><label>가격·재방문</label><div class="memo-row"><textarea data-save id="food4" placeholder="말하기 참고: 가격 대비 고기 품질, 서비스와 분위기까지 고려한 만족도, 다음에 다시 주문할 메뉴"></textarea><button class="mic" onclick="voiceTo('food4')">🎙️</button></div></div>
-<label style="font-size:12px;color:#777">전체 평점</label><div class="score" id="score"></div>
-</section>
-
-<section class="card"><h2>6. SEO 태그</h2>
-<textarea data-save id="tags">#대구맛집 #수성구맛집 #범어동맛집 #범어동삼겹살 #겹겹</textarea>
-</section>
-
-<section class="card"><h2>7. 네이버 블로그 초안</h2><div id="draft">‘블로그 초안 생성’을 누르면 입력한 메모를 바탕으로 방문 후기 초안을 만듭니다.</div></section>
-<div class="status" id="status">자동저장 준비</div>
 </div>
-<div class="footerbar"><button onclick="addPhotoItem()">📷 사진 항목 추가</button><button class="primary" onclick="window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'})">✍️ 초안으로 이동</button></div>
+
+<div>
+<section class="card">
+<h2>4. 핵심 후기 메모</h2>
+
+<label>주차</label>
+<div class="voice-ref"><b>말하기 참고:</b> 전용 주차가 있는지, 주변 주차가 쉬운지, 저녁 피크시간 주차 난이도와 아이 동반 시 편한지</div>
+<textarea id="parking" placeholder="주차 후기를 입력하세요"></textarea>
+
+<label>예약·웨이팅</label>
+<div class="voice-ref"><b>말하기 참고:</b> 예약 가능 여부, 저녁 피크시간 대기, 테이블 회전, 방문하기 좋은 시간대</div>
+<textarea id="waiting" placeholder="예약과 웨이팅 후기를 입력하세요"></textarea>
+
+<label>외관·첫인상</label>
+<div class="voice-ref"><b>말하기 참고:</b> 간판이 잘 보이는지, 고깃집 외관 분위기, 입구에서 느껴지는 첫인상과 접근성</div>
+<textarea id="exterior" placeholder="외관과 첫인상을 입력하세요"></textarea>
+
+<label>매장·테이블 분위기</label>
+<div class="voice-ref"><b>말하기 참고:</b> 테이블 간격, 환기와 연기 정도, 의자·짐 보관, 가족 외식이나 회식에 적합한지</div>
+<textarea id="interior" placeholder="매장과 테이블 분위기를 입력하세요"></textarea>
+
+<label>서비스</label>
+<div class="voice-ref"><b>말하기 참고:</b> 직원 응대, 고기를 구워주는지, 불판 교체, 반찬 리필, 주문 속도와 아이 동반 배려</div>
+<textarea id="service" placeholder="서비스 후기를 입력하세요"></textarea>
+</section>
+
+<section class="card">
+<h2>5. 고기·사이드 평가</h2>
+<label>삼겹살·고기</label>
+<div class="voice-ref"><b>말하기 참고:</b> 굽기 전 비주얼 → 두께 → 육즙 → 지방과 살코기 밸런스 → 겉면 식감 → 잡내 → 1인분 양 → 가격 만족도</div>
+<textarea id="mainDish" placeholder="삼겹살과 고기 후기를 입력하세요"></textarea>
+
+<label>기본찬·사이드</label>
+<div class="voice-ref"><b>말하기 참고:</b> 김치·파절이·쌈채소·소스 구성, 고기와 잘 맞는 조합, 찌개·냉면·볶음밥의 맛과 양</div>
+<textarea id="meal" placeholder="기본찬과 사이드 후기를 입력하세요"></textarea>
+
+<label>아이 동반 관점</label>
+<div class="voice-ref"><b>말하기 참고:</b> 유아의자, 아이가 먹기 좋은 고기·밥 메뉴, 연기와 소음, 테이블 안전성과 가족 외식 편의</div>
+<textarea id="kid" placeholder="아이 동반 관점을 입력하세요"></textarea>
+
+<label>가격·재방문</label>
+<div class="voice-ref"><b>말하기 참고:</b> 주변 삼겹살집과 비교한 가격대, 고기 품질과 서비스 대비 만족도, 다음에 다시 주문하고 싶은 메뉴</div>
+<textarea id="value" placeholder="가격과 재방문 의견을 입력하세요"></textarea>
+
+<label>전체 평점</label>
+<div class="score" id="score">
+<button data-v="1">1</button><button data-v="2">2</button><button data-v="3">3</button><button data-v="4">4</button><button data-v="5">5</button>
+</div>
+</section>
+
+<section class="card">
+<h2>6. SEO 태그</h2>
+<div class="tags">
+<label class="tag"><input type="checkbox" class="tagcheck" value="대구수성구맛집" checked>#대구수성구맛집</label>
+<label class="tag"><input type="checkbox" class="tagcheck" value="범어동맛집" checked>#범어동맛집</label>
+<label class="tag"><input type="checkbox" class="tagcheck" value="범어동삼겹살" checked>#범어동삼겹살</label>
+<label class="tag"><input type="checkbox" class="tagcheck" value="수성구삼겹살" checked>#수성구삼겹살</label>
+<label class="tag"><input type="checkbox" class="tagcheck" value="대구삼겹살" checked>#대구삼겹살</label>
+<label class="tag"><input type="checkbox" class="tagcheck" value="겹겹삼겹살" checked>#겹겹삼겹살</label>
+<label class="tag"><input type="checkbox" class="tagcheck" value="범어동고기집">#범어동고기집</label>
+</div>
+</section>
+</div>
+</div>
+
+<section class="card">
+<h2>7. 네이버 블로그 초안</h2>
+<div class="preview" id="draft">‘블로그 초안 생성’을 누르면 입력 내용을 자연스러운 후기 글로 정리합니다.</div>
+</section>
+</div>
 
 <script>
-const KEY='gyeopgyeop_review_v1'; let rating=0, photoSeq=0;
-const memoDefs=[
-['주차','주차 공간, 매장 접근성, 주변 주차 대안, 아이와 내리기 편한지'],
-['예약·웨이팅','예약 여부, 대기시간, 저녁 피크시간 혼잡도, 방문 팁'],
-['외관·첫인상','간판, 입구, 첫 분위기, 고기집인데 깔끔하거나 고급스러운 느낌인지'],
-['홀·좌석 분위기','테이블 간격, 환기, 소음, 가족모임·회식·데이트에 적합한지'],
-['서비스·굽기','직원 응대, 고기를 직접 구워주는지, 굽기 숙련도, 추가 주문 응답 속도'],
-['기본찬·곁들임','기본찬 구성, 고기와 잘 맞는 소스, 페스토·와사비·청어알 등 인상적인 조합'],
-['아이 동반 관점','유아의자, 아이가 먹기 좋은 메뉴, 좌석 편의, 연기·소음 정도']
+const KEY='gyeopgyeop-beomeo-v1';
+const base=[
+['외관·간판','겹겹삼겹살 범어점 외관과 간판','간판이 잘 보이는지, 찾아오기 쉬운지, 외관 첫인상을 말해보세요.'],
+['주차·접근','주차장 또는 주변 주차 환경','전용주차 여부, 실제 주차 난이도, 범어동에서 접근하기 편한지 말해보세요.'],
+['입구·대기','입구와 웨이팅 공간','예약 여부, 대기시간, 피크시간 분위기와 입장 동선을 말해보세요.'],
+['매장 전체','홀과 테이블 배치','좌석 간격, 소음, 환기, 연기 정도, 가족외식이나 회식에 좋은지 말해보세요.'],
+['테이블·불판','착석 직후 테이블 세팅','불판 형태, 집게·가위, 앞접시, 테이블 청결과 짐 보관이 편한지 말해보세요.'],
+['메뉴판','고기·사이드 가격','삼겹살과 다른 고기 종류, 1인분 중량과 가격, 사이드 메뉴를 말해보세요.'],
+['기본찬','김치·파절이·쌈·소스','기본찬 종류와 고기와 잘 맞는 조합, 리필 여부를 말해보세요.'],
+['삼겹살 굽기 전','고기 두께와 마블링 근접','고기 색, 두께, 지방과 살코기 비율, 첫 비주얼을 말해보세요.'],
+['불판 위 고기','굽기 시작한 삼겹살','직원이 구워주는지, 굽는 방식, 향과 소리, 불판 상태를 말해보세요.'],
+['노릇하게 익은 고기','완성된 삼겹살 근접','겉면 색과 바삭함, 육즙, 기름짐, 잡내 여부를 말해보세요.'],
+['한입 조합','쌈·소스·김치와 함께','가장 맛있었던 먹는 조합과 첫입 맛을 구체적으로 말해보세요.'],
+['추가 고기','목살 등 추가 주문 시','삼겹살과 식감·풍미 차이, 어떤 고기를 더 추천하는지 말해보세요.'],
+['찌개·식사','된장찌개·냉면·밥 등','고기 후 먹은 사이드의 간, 양, 조합과 가격 만족도를 말해보세요.'],
+['볶음밥·마무리','마지막 식사 메뉴','마무리 메뉴 비주얼, 맛, 배부름 정도를 말해보세요.'],
+['아이 동반','유아의자·아이 식사','아이와 방문하기 편한지, 연기·소음·안전, 아이가 먹기 좋은 메뉴를 말해보세요.'],
+['영수증·총평','결제와 식사 마무리','총 결제금액, 가장 맛있던 메뉴, 아쉬운 점, 재방문 의사를 말해보세요.']
 ];
-function buildMemos(){const box=document.getElementById('memos'); memoDefs.forEach((m,i)=>box.insertAdjacentHTML('beforeend',`<div class="memo"><label>${m[0]}</label><div class="memo-row"><textarea data-save id="memo${i}" placeholder="말하기 참고: ${m[1]}"></textarea><button class="mic" onclick="voiceTo('memo${i}')">🎙️</button></div></div>`))}
-function addPhotoItem(title='사진 기록', saved=null){
- const id='p'+(++photoSeq), el=document.createElement('div'); el.className='photo-item'; el.draggable=true; el.dataset.id=id;
- el.innerHTML=`<div class="photo-head"><span class="drag">↕</span><input class="photo-title" data-save value="${title}" aria-label="사진 항목 제목"><button class="danger" onclick="this.closest('.photo-item').remove();save()">삭제</button></div>
- <div class="photo-controls"><label>📷 촬영<input type="file" accept="image/*" capture="environment" onchange="loadImgs(this)"></label><label>🖼️ 여러장 선택<input type="file" accept="image/*" multiple onchange="loadImgs(this)"></label></div>
- <div class="previews"></div><div class="memo-row"><textarea data-save placeholder="사진 메모: 보이는 것 + 느낀 점 + 블로그에 꼭 쓸 포인트"></textarea><button class="mic" onclick="voiceArea(this)">🎙️</button></div>`;
- document.getElementById('photos').appendChild(el); bindDrag(el); bindSave(); if(saved){el.querySelector('.photo-title').value=saved.title||title;el.querySelector('textarea').value=saved.memo||''} save();
+let shots=[],rating=0;
+function id(){return Math.random().toString(36).slice(2,9)}
+function esc(s=''){return s.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+function save(){
+ const fields={};document.querySelectorAll('input[id],textarea[id]').forEach(e=>fields[e.id]=e.value);
+ localStorage.setItem(KEY,JSON.stringify({fields,shots,rating}));
+ document.getElementById('saveState').textContent='자동저장 완료 ✓';
 }
-function loadImgs(inp){[...inp.files].forEach(f=>{const r=new FileReader();r.onload=e=>{const img=new Image();img.src=e.target.result;img.dataset.name=f.name;inp.closest('.photo-item').querySelector('.previews').appendChild(img)};r.readAsDataURL(f)})}
-function bindDrag(el){el.addEventListener('dragstart',e=>{e.dataTransfer.setData('text/plain','x');el.classList.add('dragging')});el.addEventListener('dragend',()=>{el.classList.remove('dragging');save()});el.addEventListener('dragover',e=>{e.preventDefault();const d=document.querySelector('.dragging');if(d&&d!==el){const r=el.getBoundingClientRect();el.parentNode.insertBefore(d,e.clientY<r.top+r.height/2?el:el.nextSibling)}})}
-function bindSave(){document.querySelectorAll('[data-save]').forEach(x=>{x.oninput=save;x.onchange=save})}
-function save(){const data={rating,fields:{},photos:[]};document.querySelectorAll('[data-save]').forEach(x=>{if(x.id)data.fields[x.id]=x.value});document.querySelectorAll('.photo-item').forEach(p=>data.photos.push({title:p.querySelector('.photo-title').value,memo:p.querySelector('textarea').value}));localStorage.setItem(KEY,JSON.stringify(data));document.getElementById('status').textContent='자동저장 완료 · '+new Date().toLocaleTimeString()}
-function restore(){let d;try{d=JSON.parse(localStorage.getItem(KEY)||'null')}catch{}; if(!d){['외관·간판','메뉴판·가격','테이블·기본찬','첫 고기 한판','굽는 과정','한 점 클로즈업','곁들임 조합','식사 메뉴','매장 분위기'].forEach(x=>addPhotoItem(x));return} rating=d.rating||0; Object.entries(d.fields||{}).forEach(([k,v])=>{const x=document.getElementById(k);if(x)x.value=v}); (d.photos||[]).forEach(p=>addPhotoItem(p.title,p));paintScore()}
-function paintScore(){document.querySelectorAll('#score button').forEach((b,i)=>b.classList.toggle('on',i<rating))}
-function voiceTo(id){const t=document.getElementById(id);voice(t)} function voiceArea(btn){voice(btn.previousElementSibling)}
-function voice(t){const SR=window.SpeechRecognition||window.webkitSpeechRecognition;if(!SR){alert('이 브라우저에서는 음성입력을 지원하지 않습니다. iPhone에서는 키보드의 마이크 입력을 이용해 주세요.');return}const r=new SR();r.lang='ko-KR';r.interimResults=false;r.onresult=e=>{t.value+=(t.value?' ':'')+e.results[0][0].transcript;save()};r.start()}
-function val(id){return (document.getElementById(id)?.value||'').trim()}
-function makeDraft(){
- const mem=memoDefs.map((m,i)=>val('memo'+i)?`${m[0]}: ${val('memo'+i)}`:'').filter(Boolean).join('\n');
- const txt=`대구 범어동에서 삼겹살을 먹으러 ${val('store')||'겹겹 범어본점'}에 다녀왔어요.\n\n📍 ${val('address')}\n방문: ${val('date')||'방문일 입력'} / ${val('people')||'인원 입력'}\n주문: ${val('menu')||'주문 메뉴 입력'}\n결제: ${val('price')||'금액 입력'}\n\n이번 방문에서 가장 먼저 본 건 매장 분위기와 고기 구성이었어요. ${val('memo2')}\n\n[주문과 고기]\n${val('food1')}\n\n[곁들임 조합]\n${val('food2')}\n\n[식사와 마무리]\n${val('food3')}\n\n[현장 메모]\n${mem}\n\n전체적으로 ${rating?rating+'점/5점으로 평가했어요.':''} ${val('food4')}\n\n${val('tags')}`;
- document.getElementById('draft').textContent=txt; window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'}); save()
+function init(){
+ const d=localStorage.getItem(KEY);
+ if(d){try{const o=JSON.parse(d);shots=o.shots||[];rating=o.rating||0;Object.entries(o.fields||{}).forEach(([k,v])=>{const e=document.getElementById(k);if(e)e.value=v})}catch(e){}}
+ if(!shots.length)shots=base.map(x=>({id:id(),title:x[0],hint:x[1],guide:x[2],memo:'',img:''}));
+ document.querySelectorAll('input[id],textarea[id]').forEach(e=>e.addEventListener('input',save));
+ render();setRating(rating);
 }
-async function copyDraft(){const t=document.getElementById('draft').innerText;try{await navigator.clipboard.writeText(t);alert('초안을 복사했습니다.')}catch{alert('복사가 제한되었습니다. 텍스트를 길게 눌러 복사해 주세요.')}}
-function exportHTML(){save();const blob=new Blob([document.documentElement.outerHTML],{type:'text/html;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='겹겹_범어본점_리뷰_INDEX.html';a.click();URL.revokeObjectURL(a.href)}
-function downloadPhotos(){const imgs=[...document.querySelectorAll('.previews img')];if(!imgs.length){alert('먼저 사진을 추가해 주세요.');return}imgs.forEach((img,i)=>{const a=document.createElement('a');a.href=img.src;a.download=String(i+1).padStart(2,'0')+'_'+(img.dataset.name||'겹겹사진.jpg');a.click()})}
-buildMemos();for(let i=1;i<=5;i++){const b=document.createElement('button');b.textContent=i;b.onclick=()=>{rating=i;paintScore();save()};document.getElementById('score').appendChild(b)}bindSave();restore();
-</script></body></html>
+function render(){
+ const box=document.getElementById('shots');box.innerHTML='';
+ shots.forEach((s,i)=>{
+ const el=document.createElement('div');el.className='shot';el.innerHTML=`
+ <div class="shothead"><div class="num">${i+1}</div><div class="st"><b>${esc(s.title)}</b><span>${esc(s.hint)}</span></div></div>
+ <div class="shotbody"><div class="photo">${s.img?`<img src="${s.img}">`:'사진을 촬영하거나 보관함에서 선택하세요'}</div>
+ <div class="actions"><label class="camera">📷 촬영<input class="hidden" type="file" accept="image/*" capture="environment" onchange="photo(event,'${s.id}')"></label><label>🖼️ 사진선택<input class="hidden" type="file" accept="image/*" onchange="photo(event,'${s.id}')"></label>
+ <button onclick="delPhoto('${s.id}')">사진삭제</button><button onclick="delShot('${s.id}')">항목삭제</button></div>
+ <label>사진별 코멘트</label><div class="voice-ref"><b>음성 메모 참고:</b> ${esc(s.guide)}</div>
+ <textarea placeholder="사진별 코멘트를 입력하세요" oninput="memo('${s.id}',this.value)">${esc(s.memo||'')}</textarea></div>`;
+ box.appendChild(el);
+ });
+}
+
+async function compressDataUrl(dataUrl,maxWidth=1280,quality=0.72){
+ return new Promise((resolve,reject)=>{
+  const img=new Image();
+  img.onload=()=>{
+   let w=img.width,h=img.height;
+   if(w>maxWidth){h=Math.round(h*(maxWidth/w));w=maxWidth;}
+   const c=document.createElement('canvas');
+   c.width=w;c.height=h;
+   const ctx=c.getContext('2d');
+   ctx.drawImage(img,0,0,w,h);
+   resolve(c.toDataURL('image/jpeg',quality));
+  };
+  img.onerror=reject;
+  img.src=dataUrl;
+ });
+}
+async function fileToCompressedDataUrl(file,maxWidth=1280,quality=0.72){
+ return new Promise((resolve,reject)=>{
+  const r=new FileReader();
+  r.onload=async()=>{
+   try{resolve(await compressDataUrl(r.result,maxWidth,quality))}
+   catch(e){reject(e)}
+  };
+  r.onerror=reject;
+  r.readAsDataURL(file);
+ });
+}
+
+async function photo(e,i){
+ const f=e.target.files[0];if(!f)return;
+ try{
+  document.getElementById('saveState').textContent='사진 압축 중…';
+  const compressed=await fileToCompressedDataUrl(f,1280,0.72);
+  const s=shots.find(x=>x.id===i);
+  if(s){s.img=compressed;render();save();}
+ }catch(err){
+  console.error(err);
+  alert('사진 처리 중 오류가 발생했습니다.');
+ }
+}
+function memo(i,v){const s=shots.find(x=>x.id===i);if(s)s.memo=v;save()}
+function delPhoto(i){const s=shots.find(x=>x.id===i);if(s){s.img='';render();save()}}
+function delShot(i){shots=shots.filter(x=>x.id!==i);render();save()}
+function addShot(){shots.push({id:id(),title:'추가 사진',hint:'필요한 장면',guide:'사진에 보이는 것 → 실제 느낀 점 → 블로그에 남길 포인트 순서로 말해보세요.',memo:'',img:''});render();save()}
+function setRating(n){rating=Number(n)||0;document.querySelectorAll('#score button').forEach(b=>b.classList.toggle('on',Number(b.dataset.v)<=rating));save()}
+document.addEventListener('click',e=>{if(e.target.matches('#score button'))setRating(e.target.dataset.v)});
+function v(i){return(document.getElementById(i)?.value||'').trim()}
+function sm(k){const s=shots.find(x=>x.title.includes(k));return s?.memo?.trim()||''}
+function p(h,t){return t?h+'\n'+t+'\n\n':''}
+function draft(){
+ const addr=v('storeAddress')||'현장 확인';
+ const phone=v('storePhone')||'현장 확인';
+ const hours=v('storeHours')||'현장 확인';
+ const lo=v('lastOrder')||'현장 확인';
+ const park=v('storeParking')||'현장 확인';
+ let t=`대구 수성구 범어동에 있는 겹겹삼겹살 범어점에 다녀왔어요.
+
+삼겹살은 고기 자체의 두께와 육즙도 중요하지만 불판에서 어떻게 구워지는지, 어떤 기본찬과 곁들여 먹는지에 따라 만족도가 크게 달라지죠. 오늘은 외관부터 고기 굽는 과정, 한입 조합과 사이드 메뉴까지 차근차근 기록해봤어요.
+
+📍 겹겹삼겹살 범어점
+주소 : ${addr}
+영업시간 : ${hours}
+라스트오더 : ${lo}
+전화 : ${phone}
+주차 : ${park}
+`;
+ if(v('visitDate'))t+=`방문일 : ${v('visitDate')}
+`;
+ if(v('party'))t+=`방문 인원 : ${v('party')}
+`;
+ if(v('reservation'))t+=`예약/웨이팅 : ${v('reservation')}
+`;
+ if(v('orderMenu'))t+=`주문 메뉴 : ${v('orderMenu')}
+`;
+ t+='
+';
+ t+=p('주차와 접근성',v('parking')||sm('주차'));
+ t+=p('예약과 웨이팅',v('waiting')||sm('입구'));
+ t+=p('외관과 첫인상',v('exterior')||sm('외관'));
+ t+=p('매장과 테이블 분위기',v('interior')||sm('매장'));
+ t+=p('서비스',v('service')||sm('불판'));
+ t+=p('삼겹살과 고기',v('mainDish')||sm('노릇')||sm('삼겹살 굽기 전'));
+ t+=p('기본찬과 사이드',v('meal')||sm('기본찬')||sm('찌개'));
+ if(v('kid'))t+=p('아이와 함께 방문한다면',v('kid'));
+ if(v('value'))t+=p('가격과 재방문',v('value'));
+ t+='총평
+범어동에서 삼겹살을 먹을 때 고기의 맛뿐 아니라 매장 분위기, 기본찬 구성, 굽는 과정까지 함께 기록해두면 다음 방문 때 비교하기 좋았어요.';
+ if(rating)t+=` 개인적인 만족도는 ${rating}/5점입니다.`;
+ if(v('price'))t+=` 이날 총 결제금액은 ${v('price')}이었어요.`;
+ const tags=[...document.querySelectorAll('.tagcheck:checked')].map(x=>'#'+x.value).join(' ');
+ t+=`
+
+※ 영업시간과 메뉴 가격, 주차·예약 방식은 방문 시점에 따라 달라질 수 있으니 방문 전 확인해 주세요.
+
+${tags}`;
+ document.getElementById('draft').textContent=t;save();return t;
+}
+async function copyDraft(){try{await navigator.clipboard.writeText(draft());alert('초안을 복사했습니다.')}catch(e){alert('복사가 제한되었습니다.')}}
+async function exportHTML(){
+ try{
+  document.getElementById('saveState').textContent='내보내기용 사진 압축 중…';
+  save();
+
+  const exportShots=[];
+  for(const s of shots){
+   let img=s.img||'';
+   if(img){
+    try{img=await compressDataUrl(img,960,0.58);}catch(e){}
+   }
+   exportShots.push({...s,img});
+  }
+
+  const exportFields={};
+  document.querySelectorAll('input[id],textarea[id]').forEach(e=>exportFields[e.id]=e.value);
+
+  const exportedData={fields:exportFields,shots:exportShots,rating:rating};
+  let exportDoc=document.documentElement.outerHTML;
+
+  const marker="window.addEventListener('load',init);";
+  const injected=`
+window.__EXPORTED_DATA__=${JSON.stringify(exportedData)};
+const __baseInit=init;
+init=function(){
+ const o=window.__EXPORTED_DATA__;
+ if(o){
+  shots=o.shots||[];
+  rating=o.rating||0;
+  Object.entries(o.fields||{}).forEach(([k,v])=>{const e=document.getElementById(k);if(e)e.value=v});
+  render();setRating(rating);
+  document.querySelectorAll('input[id],textarea[id]').forEach(e=>e.addEventListener('input',save));
+  document.getElementById('saveState').textContent='내보낸 작성본 불러옴 ✓';
+  return;
+ }
+ __baseInit();
+};
+window.addEventListener('load',init);`;
+  exportDoc=exportDoc.replace(marker,injected);
+
+  const b=new Blob([exportDoc],{type:'text/html;charset=utf-8'});
+  const url=URL.createObjectURL(b);
+  const a=document.createElement('a');
+  a.href=url;
+  a.download='index_대구_범어동_겹겹삼겹살_리뷰_사진압축본.html';
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(()=>{URL.revokeObjectURL(url);a.remove();},1500);
+  document.getElementById('saveState').textContent='HTML 내보내기 완료 ✓';
+ }catch(err){
+  console.error(err);
+  alert('HTML 내보내기에 실패했습니다. 사진 수를 조금 줄이거나 다시 시도해주세요.');
+  document.getElementById('saveState').textContent='내보내기 오류';
+ }
+}
+function downloadPhotos(){const a=shots.filter(x=>x.img);if(!a.length){alert('사진이 없습니다.');return}a.forEach((s,i)=>{const x=document.createElement('a');x.href=s.img;x.download=String(i+1).padStart(2,'0')+'_'+s.title+'.jpg';x.click()})}
+window.addEventListener('load',init);
+</script>
+</body>
+</html>
