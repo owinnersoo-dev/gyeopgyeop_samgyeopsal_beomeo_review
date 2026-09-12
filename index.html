@@ -11,7 +11,7 @@ button,input,textarea{font:inherit}.wrap{max-width:980px;margin:auto;padding:16p
 .hero{background:linear-gradient(135deg,#fffdf8,#fff4e8);border:1px solid #eedbc4;border-radius:24px;padding:24px 20px}
 .hero small{font-weight:800;color:#a44d00}.hero h1{margin:8px 0;font-size:29px;line-height:1.25}.hero p{margin:0;color:var(--muted)}
 .chips{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.chip{background:#fff;border:1px solid #eadfce;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:700}
-.toolbar{position:static;background:#fff;border:1px solid var(--line);border-radius:17px;padding:10px;margin:12px 0;display:flex;gap:8px;flex-wrap:wrap}
+.toolbar{position:static;background:#fff;border:1px solid var(--line);border-radius:17px;padding:10px;margin:12px 0;display:flex;gap:8px;flex-wrap:wrap;transition:opacity .15s ease}.toolbar.scroll-hidden{opacity:0!important;visibility:hidden!important;pointer-events:none!important}
 .btn{border:0;border-radius:10px;padding:10px 12px;font-weight:800;background:#eef1f4}.primary{background:var(--green);color:#fff}.blue{background:var(--blue);color:#fff}.orange{background:var(--orange);color:#fff}
 .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:14px}@media(max-width:760px){.grid{grid-template-columns:1fr}.hero h1{font-size:25px}}
 .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:17px;margin:12px 0}.card h2{font-size:20px;margin:0 0 12px}
@@ -23,7 +23,7 @@ input,textarea{width:100%;border:1px solid #d7dce1;border-radius:10px;padding:10
 .note{background:#fff9f1;border-left:4px solid #d79a3a;padding:10px 12px;border-radius:8px;font-size:13px;color:#5f503b}
 .shot{border:1px solid var(--line);border-radius:15px;overflow:hidden;margin:11px 0;background:#fff}.shothead{display:flex;gap:10px;padding:12px}.num{width:30px;height:30px;border-radius:9px;background:#fff3e8;color:#a65200;display:flex;align-items:center;justify-content:center;font-weight:900}.st{flex:1}.st b{display:block}.st span{font-size:12px;color:var(--muted)}
 .shotbody{padding:0 12px 12px}.photo{min-height:145px;border:1.5px dashed #cbd5e1;border-radius:11px;background:#fafafa;display:flex;align-items:center;justify-content:center;overflow:hidden;color:#94a3b8;font-size:13px;text-align:center}.photo img{width:100%;height:auto}
-.actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:8px}.actions label,.actions button{margin:0;border:0;border-radius:9px;padding:9px 10px;font-weight:800;font-size:12px;background:#eef2f4;cursor:pointer}.actions .camera{background:#e8fff1;color:#067a38}.hidden{display:none}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}.actions label,.actions button{margin:0;border:0;border-radius:10px;padding:11px 10px;font-weight:800;font-size:13px;background:#eef2f4;cursor:pointer;text-align:center}.actions .camera{background:#e8fff1;color:#067a38}.actions .gallery{background:#eaf2ff;color:#1559b7;border:1px solid #bdd3ff}.actions button{grid-column:auto}@media(max-width:430px){.actions{grid-template-columns:1fr 1fr}.actions label{font-size:12px;padding:11px 6px}}
 .preview{white-space:pre-wrap;border:1px solid var(--line);border-radius:14px;padding:17px;min-height:260px;line-height:1.9}
 .score{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}.score button{border:1px solid var(--line);background:#fff;border-radius:9px;padding:8px}.score button.on{background:#fff4e6;border-color:#ffc57d;color:#d66800}
 .tags{display:flex;flex-wrap:wrap;gap:6px}.tag{border:1px solid var(--line);border-radius:999px;padding:6px 9px;font-size:12px}
@@ -142,6 +142,11 @@ function init(){
  if(!shots.length)shots=base.map(x=>({id:uid(),title:x[0],hint:x[1],guide:x[2],memo:'',img:''}));
  document.querySelectorAll('input[id],textarea[id]').forEach(e=>e.addEventListener('input',save));
  render(); setRating(rating,false); save();
+ syncToolbarVisibility();
+}
+function syncToolbarVisibility(){
+ const toolbar=document.querySelector('.toolbar');
+ if(toolbar)toolbar.classList.toggle('scroll-hidden',(window.scrollY||document.documentElement.scrollTop||0)>50);
 }
 function render(){
  const box=document.getElementById('shots'); box.innerHTML='';
@@ -163,7 +168,7 @@ function render(){
   </div>
   <div class="shotbody"><div class="photo">${s.img?`<img src="${s.img}" alt="${esc(s.title)}">`:'사진을 촬영하거나 보관함에서 선택하세요'}</div>
   <div class="actions"><label class="camera">📷 바로 촬영<input class="hidden" type="file" accept="image/*" capture="environment" onchange="photo(event,'${s.id}')"></label>
-  <label class="camera">🖼️ 파일·사진 첨부<input class="hidden" type="file" accept="image/*" onchange="photo(event,'${s.id}')"></label>
+  <label class="gallery">🖼️ 보관함에서 불러오기<input class="hidden" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif" onchange="photo(event,'${s.id}')"></label>
   <button onclick="delPhoto('${s.id}')">사진삭제</button><button onclick="delShot('${s.id}')">항목삭제</button></div>
   <label>사진별 코멘트</label><div class="voice-ref"><b>음성 메모 참고:</b> ${esc(s.guide)}</div>
   <textarea placeholder="사진별 코멘트를 입력하세요" oninput="memo('${s.id}',this.value)">${esc(s.memo||'')}</textarea></div>`;
@@ -448,6 +453,7 @@ function downloadPhotos(){
  arr.forEach((s,i)=>{const a=document.createElement('a');a.href=s.img;a.download=String(i+1).padStart(2,'0')+'_'+s.title+'.jpg';document.body.appendChild(a);a.click();a.remove()});
 }
 window.addEventListener('load',init);
+window.addEventListener('scroll',syncToolbarVisibility,{passive:true});
 </script>
 </body>
 </html>
